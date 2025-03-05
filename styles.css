@@ -1,0 +1,1356 @@
+/* accordion and navbar start */
+.navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    /* background: #FFFFFF; */
+    /* border: 0.5px solid #565656; */
+    -webkit-text-stroke: 0.2px #565656;
+}
+.accordion {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px auto;
+}
+
+.accordion ul {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion ul li {
+  display: table-cell;
+  vertical-align: bottom;
+  position: relative;
+  width: 16.666%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 400ms ease-in-out;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+.accordion ul li::-webkit-scrollbar {
+    display: none;
+  }
+.accordion ul li div {
+  display: block;
+  /* overflow: hidden; */
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.accordion ul li div a {
+  display: block;
+  height: 350px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  /* vertical-align: bottom; */
+  box-sizing: border-box;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  /*filter: invert(100%);*/
+  text-decoration: none;
+  font-family: Open Sans, sans-serif;
+  transition: all 300ms ease-in-out;
+}
+
+.accordion ul li div a * {
+  opacity: 1;
+  margin: 0 0 0 10px;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  white-space: nowrap;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  text-align: center;
+}
+.accordion ul li div a h2 {
+  text-overflow: clip;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  top: 120px;
+  margin-top: -100px;
+  font-family: "Bebas Neue";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 32px;
+  /* transform: rotateZ(-90deg) rotateX(45deg); */
+}
+
+.accordion ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Adjust height as needed */
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); */
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #a88800 100%);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1; /* Default visible */
+}
+
+.accordion ul li:hover::after {
+  opacity: 0.8; /* Change opacity on hover if needed */
+}
+/* .accordion ul li:not(:hover) div a h2 {
+transform: rotateZ(-90deg) rotateX(-15deg)  ;
+
+} */
+.accordion ul li div a h2 {
+  transform: rotateZ(0deg) rotateX(0deg);
+}
+
+.accordion ul:hover li div a h2 {
+  transform: rotateZ(-90deg) rotateX(-15deg); /* Hide all <p> tags when hovering over any <li> */
+}
+
+.accordion ul li:hover div a h2 {
+  transform: rotateZ(0deg) rotateX(0deg) !important; /* Show only the hovered <li>'s <p> */
+}
+
+/* .accordion ul li:not(:hover) div a p {
+display: none;
+}
+
+.accordion ul li:hover div a p{
+display: block;
+} */
+
+.accordion ul li div a h6 {
+  opacity: 0; /* Default: All <p> tags are visible */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.accordion ul:hover li div a h6 {
+  opacity: 0; /* Hide all <p> tags when hovering over any <li> */
+}
+
+.accordion ul li:hover div a h6 {
+  opacity: 1 !important; /* Show only the hovered <li>'s <p> */
+  text-align: center;
+  text-wrap: wrap;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+/* ====================== */
+.accordion ul li div a p {
+  opacity: 1; /* Default: All <p> tags are visible */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.accordion ul:hover li div a p {
+  opacity: 0; /* Hide all <p> tags when hovering over any <li> */
+}
+
+.accordion ul li:hover div a p {
+  opacity: 0 !important; /* Show only the hovered <li>'s <p> */
+}
+
+.accordion ul li div .title {
+  font-family: Montserrat, sans-serif;
+  text-overflow: clip;
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  top: 210px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #000;
+  left: 5%;
+  position: absolute;
+  opacity: 1;
+}
+.accordion ul li div a p {
+  top: 190px;
+  font-size: 20px;
+  padding-left: 0;
+  text-wrap: wrap;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+.accordion ul li div a h6 {
+  top: 30%;
+  font-size: 18px;
+  padding-left: 0;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.accordion ul li:nth-child(1) {
+  background-image: url(./images/img-1.png);
+  background-position: 50% 30%;
+}
+
+.accordion ul li:nth-child(2) {
+  background-image: url(./images/img-2.png);
+  background-position: 70% 0%;
+}
+
+.accordion ul li:nth-child(3) {
+  background-image: url(./images/img-3.png);
+  background-position: 50% 50%;
+}
+
+.accordion ul li:nth-child(4) {
+  background-image: url(./images/img-4.png);
+  background-position: 30% 40%;
+}
+
+.accordion ul li:nth-child(5) {
+  background-image: url();
+  background-position: 60% 64%;
+}
+
+.accordion ul li {
+  background-size: cover;
+}
+.accordion ul:hover li {
+  width: 10%;
+}
+.accordion ul:hover li p {
+  width: 10%;
+  display: hidden;
+}
+.accordion ul:hover li:hover {
+  width: 90%;
+}
+.accordion ul:hover li:hover p {
+  width: 90%;
+  display: visible;
+}
+
+/*.accordion ul:hover li:hover a { background: rgba(0, 0, 0, 0.4); }*/
+
+.accordion ul:hover li:hover a * {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.accordion ul:hover li:hover .title * {
+  opacity: 0;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 680px) {
+  body {
+    margin: 0;
+  }
+  .accordion {
+    height: auto;
+  }
+
+  .accordion ul li,
+  .accordion ul li:hover,
+  .accordion ul:hover li,
+  .accordion ul:hover li:hover {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .accordion ul li div a * {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* accordion and navbar End */
+.section {
+  padding: 50px 0px;
+}
+.section .main-wrapper__panel {
+  text-align: center;
+  background: #fff !important;
+}
+
+.main-wrapper__panel-wrapper .main-wrapper__panel h1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: -105px;
+  font-family: "Bebas Neue";
+  font-size: 310px;
+  font-weight: 400;
+  line-height: 480px;
+  text-align: center;
+  color: #efefef99;
+  z-index: -1;
+}
+.main-wrapper__panel-wrapper .main-wrapper__panel .container h2 {
+  font-family: "Bebas Neue";
+  font-size: 47px;
+  font-weight: 400;
+  padding-top: 60px;
+  line-height: 30px;
+  text-align: center;
+}
+.main-wrapper__panel-wrapper .main-wrapper__panel .container .about-image img {
+  border-radius: 10px 50px 10px 50px;
+  width: 100%;
+  height: auto;
+}
+.main-wrapper__panel-wrapper .main-wrapper__panel .container a {
+  display: flex;
+  position: absolute;
+  /* top: 34%; */
+  right: 3%;
+  bottom: 102px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins";
+  color: white;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.main-wrapper__panel-wrapper .main-wrapper__panel .container a span {
+  background-image: url(/images/Arrow-4.png);
+  display: grid;
+  color: black;
+  padding: 5px;
+  border-radius: 100%;
+  background-color: #fef302;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  align-items: center;
+  background-position: center;
+}
+.main-wrapper__panel .explore-section {
+  background: #fff;
+  height: 100vh;
+}
+.main-wrapper__panel .explore-section h1 {
+  font-size: 200px !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 30px;
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  line-height: 180px;
+  text-align: center;
+  color: #efefef99;
+  height: 100px;
+  /* z-index: -1; */
+}
+.main-wrapper__panel .explore-section .explore-items .main-title {
+  text-align: center;
+}
+.main-wrapper__panel .explore-section .explore-items .main-title h2 {
+  font-family: Bebas Neue;
+  font-size: 47px;
+  font-weight: 400;
+  line-height: 42px;
+  text-align: center;
+  padding-top: 44px;
+  position: relative;
+  z-index: 1;
+}
+.main-wrapper__panel .explore-section .explore-items .main-title p{
+    position: relative;
+    z-index: 1;
+}
+.main-wrapper__panel .explore-section .explore-items .left-rice {
+  position: absolute;
+  width: 180px;
+  height: 330px;
+  top: 13px;
+  left: 0;
+  padding-left: 0 !important;
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out !important;
+}
+.main-wrapper__panel .explore-section .explore-items .left-rice.show{
+    transform: translateX(0) !important;
+
+}
+.main-wrapper__panel .explore-section .explore-items .right-rice {
+  position: absolute;
+  width: 180px;
+  height: 330px;
+  bottom: 0;
+  right: 0;
+  padding: 0 !important;
+  transform: translateX(100%);
+  transition: transform 1s ease-in-out !important;
+}
+.main-wrapper__panel .explore-section .explore-items .right-rice.show{
+    transform: translateX(0) !important;
+}
+.swiper-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: #fff;
+  /* padding: 20px; */
+  /* border-radius: 10px; */
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+}
+.main-wrapper__panel .explore-section .explore-items .product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* padding-bottom: 20px; */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* height: 310px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.explore-section .main-title h2 {
+  font-size: 40px !important;
+  color: #000;
+  font-family: "Bebas Neue";
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* .explore-section p {
+    font-size: 16px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 300;
+  } */
+
+.product-card .card {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 226px;
+  margin: 0 auto;
+  /* overflow: hidden; */
+  /* background-blend-mode: normal; */
+  isolation: isolate;
+}
+.product-card .card::before {
+  content: "";
+  /* background: url('images/explore_range/back-gif.gif') center center / cover no-repeat,
+    rgba(184, 180, 180, 0.5); */
+  background-image: url("images/explore_range/back-gif.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 75%;
+  opacity: 1;
+  mix-blend-mode: multiply;
+  /* z-index: 1; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+.product-card .bg-1 {
+  background-color: #4753ca !important;
+}
+.product-card .bg-2 {
+  background-color: #929d1c !important;
+}
+.product-card .bg-3 {
+  background-color: #a27ab7 !important;
+}
+.product-card .bg-4 {
+  background-color: #513629 !important;
+}
+.product-card .bg-5{
+    background-color: #0093DD !important;
+}
+.product-card .bgd-1 {
+  background-color: #EBC84A !important;
+}
+.product-card .bgd-2{
+  background-color: #F1B67E !important;
+}
+.product-card .bgd-3 {
+    background-color: #F8B21F !important;
+}
+.product-card .bgd-4 {
+    background-color: #DEC79D !important;
+}
+.product-card .bgm-1{
+    background-color: #FFD87C !important;
+}
+.product-card .bgm-2{
+    background-color: #7F1620 !important;
+}
+.product-card .bgm-3{
+    background-color: #576A4E !important;
+}
+.product-card .bgm-4{
+    background-color: #AF6117 !important;
+}
+.product-card .bgr-1{
+    background-color: #DDC432 !important;
+}
+.product-card .bgr-2{
+    background-color: #81214F !important;   
+}
+.product-card .bgr-3{
+    background-color: #03869F !important;    
+}
+.product-card .bgr-4{
+    background-color: #C17B30 !important; 
+}
+.product-card .bgs-1{
+   background-color:#96272C !important ;
+}
+.product-card .bgs-2{
+    background-color:#863A20 !important ; 
+}
+.product-card .bgs-3{
+    background-color: #492366 !important;
+}
+
+.product-card .card img {
+  position: relative;
+  width: 100% !important;
+  object-fit: contain;
+  margin-bottom: -25px !important;
+  padding: 12px !important;
+  height: 245px !important;
+  top: 3px !important;
+}
+.product-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  } */
+.product-card {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-content {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: white;
+  padding: 20px;
+  text-align: center;
+  transform: skewY(13deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: bottom 0.4s ease-in-out;
+}
+.rotate-correct {
+  transform: skewY(-13deg);
+}
+
+.product-card:hover .hover-content {
+  bottom: 0;
+  opacity: 1;
+}
+.hover-content h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.hover-content p {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-custom {
+  background-color: #8cbf3f;
+  color: white;
+  font-size: 12px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #6d9a2d;
+}
+
+/* Category Items */
+
+.category-item {
+  text-align: center;
+  padding-top: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: transparent;
+}
+.category-item .tab-but {
+    transition: transform 0.3s ease-in-out;
+    color: #000;
+}
+.category-item:hover .tab-but{
+    transform: scale(1.2);
+}
+.category-item button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: unset !important;
+  color: #000;
+  font-family: Bebas Neue;
+  font-weight: 400;
+  font-size: 20px;
+}
+.category-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.category-item p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+.card-content {
+  padding-top: 25px;
+}
+.card-content h2 {
+  font-size: 15px;
+  color: #000;
+  font-weight: 650 !important;
+  text-transform: uppercase;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #000;
+  font-family: "Poppins";
+  
+  font-weight: 400;
+  line-height: 21px;
+  text-align: center;
+  text-transform: capitalize;
+}
+@media (max-width: 575px){
+  .main-wrapper__panel .explore-section .explore-items .main-title h2{
+    padding-top: 25px !important;
+  }
+  .card-content{
+    padding-top: 13px !important;
+  }
+  .product-card .card{
+    height: 195px;
+  }
+  .product-card .card img{
+    height: 207px !important;
+  }
+  #productTabsContent .swiper-wrapper .swiper-slide{
+    width: 190px !important;
+  }
+  .recipes .nav-tabs .nav-link{
+    font-size: 14px !important;
+  }
+}
+@media (max-width:768px){
+  .explore-section{
+    padding-top: 0px !important;
+  }
+  .category-item{
+    padding-top: 0px !important;
+  }
+  .main-wrapper__panel .explore-section h1{
+    top: 0px;
+    font-size: 160px !important;
+    line-height: 155px ;
+  }
+  .main-wrapper__panel .explore-section .explore-items .main-title h2{
+    padding-top: 28px;
+  }
+}
+
+/* Recipes section start */
+.main-wrapper__panel .recipes {
+  background: #fff;
+  position: relative;
+  min-height: 100vh;
+  
+}
+.recipes .nav-tabs {
+  border: none;
+  position: relative;
+  z-index: 99;
+  padding-top: 50px;
+}
+.recipes .nav-tabs .nav-link {
+  border-radius: 25px;
+  padding: 8px 20px;
+  margin: 2px 5px;
+  color: #000;
+  background-color: #e0e0e0;
+  border: none;
+  font-family: "Bebas Neue";
+  font-size: 24px;
+  font-weight: 400;
+  /* line-height: 28.8px; */
+  text-align: center;
+}
+
+.recipes .nav-tabs .nav-link.active {
+  background-color: #ffd700;
+  color: #000;
+}
+/* .tab-swiper {
+  background-color: transparent !important;
+}
+
+.tab-swiper .swiper-wrapper {
+  background-color: transparent !important;
+} */
+
+.tab-swiper .swiper-slide {
+  background-color: transparent !important;
+}
+.mySwiper .swiper-slide {
+  background-color: transparent !important;
+}
+.mySwiper .swiper-pagination{
+  display: none;
+}
+.sweetSwiper .swiper-pagination{
+  display: none;
+}
+.recipe-card {
+  background: white;
+  padding: 15px;
+  /* border-radius: 10px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.recipe-card.middle-card {
+  margin-top: 50px;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.tab-content .recipe-card img {
+  width: 100%;
+  height: auto;
+  /* border-radius: 8px; */
+  margin-bottom: 15px;
+}
+
+.tab-content .recipe-card h2 {
+  /* font-size: 1.5rem; */
+  /* font-weight: bold; */
+  margin: 0;
+  text-transform: uppercase;
+  color: #000;
+  font-family: "Bebas Neue";
+  font-size: 48px;
+  font-weight: 400;
+  /* line-height: 57.6px; */
+  text-align: center;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    .tab-content .recipe-card h2{
+        font-size: 35px;
+    }
+}
+@media (min-width:320px) and (max-width:575px){
+    .main-wrapper__panel-wrapper .main-wrapper__panel h1{
+       /* display: none; */
+       font-size: 108px !important;
+       top: -170px;
+    }
+    .main-wrapper__panel-wrapper .main-wrapper__panel .container a{
+        font-size: 10px;
+        right: 6%;
+        bottom: 15px;
+    }
+    .main-wrapper__panel-wrapper .main-wrapper__panel .container h2{
+        font-size: 40px;
+    }
+    .main-wrapper__panel-wrapper .main-wrapper__panel .container a span{
+        width: 17px;
+        height: 17px;
+    }
+    /* .main-wrapper__panel .explore-section h1{
+        display: none;
+    } */
+    .main-wrapper__panel .explore-section .explore-items .left-rice{
+        display: none;
+    }
+    .main-wrapper__panel .explore-section .explore-items .right-rice{
+        display: none;
+    }
+    .recipes .tab-content h1{
+        display: none;
+    }
+    .recipes .nav-tabs .nav-link{
+        margin: 2px 5px;
+    }
+    
+}
+@media (min-width:425px) and (max-width:575px){
+  .main-wrapper__panel-wrapper .main-wrapper__panel h1{
+    font-size: 130px !important;
+  }
+}
+@media (min-width:576px) and (max-width: 768px) {
+    .main-wrapper__panel-wrapper .main-wrapper__panel h1{
+        font-size:195px !important;
+    }
+    .main-wrapper__panel-wrapper .main-wrapper__panel .container a{
+        bottom:10px;
+        right: 10%;
+        font-size: 12px;
+    }
+    .main-wrapper__panel-wrapper .main-wrapper__panel .container a span{
+        width: 20px;
+        height: 20px;
+    }
+    .main-wrapper__panel .explore-section .explore-items .left-rice{
+        width: 65px;
+        height: 200px;
+    }
+    .main-wrapper__panel .explore-section .explore-items .right-rice{
+        width: 65px;
+        height: 200px;
+    }
+    .recipes .tab-content h1{
+        font-size: 180px !important;
+    }
+    .tab-content .recipe-card h2{
+      font-size: 30px;
+    }
+  .recipe-card.middle-card {
+    margin-top: 0;
+  }
+  .yellow-blob img:nth-child(1){
+    width: 475px !important;
+    height: 400px !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .testimonial-stack{
+    margin:50px auto !important;
+    max-width: 350px !important;
+  } 
+  .dots-wrapper img:nth-child(1){
+    right: 8px !important;
+  }
+  .dots-wrapper img:nth-child(2){
+    right: -25px !important;
+  }
+}
+@media (min-width:320px) and (max-width: 425px){
+  .main-wrapper__panel .explore-section h1{
+    font-size: 125px !important;
+  }
+}
+@media (max-width: 992px) {
+  .category-item img{
+    width: 70px;
+    height: 70px;
+  }
+  .yellow-blob{
+    position: unset !important;
+    
+  }
+  
+  .yellow-blob img:nth-child(2){
+    right: 12% !important;
+  }
+  
+  .testimonial-section{
+      margin: 65px auto !important;
+      padding: 0px !important;
+  }
+  .testimonial-card{
+    padding-right: 15px !important;
+  }
+  
+  .testimonial-text{
+    font-size: 13px !important  ;
+  }
+}
+@media (min-width:768px) and (max-width: 991px) {
+    .main-wrapper__panel-wrapper .main-wrapper__panel h1{
+        font-size:200px ;
+    }
+    .category-item {
+      padding-top: 0px;
+    }
+    .recipes .tab-content h1{
+        font-size: 200px !important;
+    }
+    .tab-content .recipe-card h2{
+        font-size: 40px;
+    }
+    .main-wrapper__panel-wrapper .main-wrapper__panel .container a{
+        right: 3%;
+        bottom: 25px;
+    }
+    .main-wrapper__panel .explore-section .explore-items .left-rice,
+    .main-wrapper__panel .explore-section .explore-items .right-rice{
+        width: 85px;
+        height: 200px;
+    }
+    .testimonial-stack{
+      margin: 50px auto !important;
+      max-width: 410px !important;
+    }   
+    .yellow-blob img:nth-child(1){
+      width:475px  !important;
+      height: 400px !important;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+    }
+    .dots-wrapper img:nth-child(1){
+      right:35px !important;
+      top: 8px;
+  }
+  .dots-wrapper img:nth-child(2){
+       right: 0 !important;
+       top: 75px !important;
+  }
+}
+@media (min-width:991px){
+  .testimonial-section{
+    padding: 100px 0px;
+  }
+}
+@media (min-width:992px) and (max-width: 1240px) {
+  .main-wrapper__panel .explore-section .explore-items .left-rice,
+   .main-wrapper__panel .explore-section .explore-items .right-rice{
+    width: 110px;
+    height: 240px;
+   }
+   .main-wrapper__panel .explore-section{
+    padding-top: 0px !important;
+   }
+   .main-wrapper__panel .explore-section h1{
+    top: 5px;
+   }
+   .category-item {
+    padding-top: 0px;
+   }
+}
+.main-wrapper__panel .recipes {
+  background-color: #f0f0f080;
+}
+.main-wrapper__panel {
+   
+    height: auto !important;
+    padding: 0 !important;
+}
+.main-wrapper__panel .recipes::before {
+  content: "";
+  background-image: url("images/recipes/recipeGif.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+  /* z-index: 1; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.recipes .tab-content h1 {
+  font-size: 300px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 70px;
+  font-family: "Bebas Neue";
+  font-weight: 400;
+  line-height: 180px;
+  text-align: center;
+  color: #ffffffb8;
+  height: 100px;
+  font-weight: 400;
+  letter-spacing: 20px;
+}
+#TabsContent .tab-pane{
+    height: 500px !important;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+}
+#TabsContent .tab-pane::-webkit-scrollbar {
+    display: none;
+}
+/* Recipes section End */
+
+/* Testimonial section start */
+.testimonial-section {
+  /* padding: 100px 0; */
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 100px auto 0 auto;
+  min-height: 100vh;
+}
+
+.section-title {
+  color: #14183e;
+  padding-bottom: 60px;
+  font-family: Poppins;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.testimonial-header {
+  text-transform: uppercase;
+  color: #5e6282;
+  /* font-size: 14px; */
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  font-family: Bebas Neue;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.yellow-blob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 1;
+  z-index: 0;
+  background-repeat: no-repeat;
+}
+.yellow-blob img:nth-child(1) {
+  width: 635px;
+  height: 500px;
+  position: absolute;
+  right: 30px;
+}
+.yellow-blob img:nth-child(2) {
+  position: absolute;
+  top: 60px;
+  right: 0;
+}
+.star-decoration {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 20%;
+  top: 40%;
+}
+
+.testimonial-stack {
+  position: relative;
+  /* height: 280px; */
+  max-width: 500px;
+  
+  margin-left: 6rem;
+}
+
+.testimonial-card {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  padding: 32px 0px 15px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.testimonial-card img {
+  width: 70px;
+  height: 70px;
+}
+
+.testimonial-card.active {
+  transform: translateX(0px) translateY(-20px);
+  opacity: 1;
+  z-index: 3;
+}
+
+.testimonial-card.next {
+  transform: translateX(40px) translateY(15px) scale(0.98);
+  opacity: 1;
+  z-index: 2;
+}
+
+.testimonial-card.last {
+  transform: translateX(70px) translateY(45px) scale(0.96);
+  opacity: 1;
+  z-index: 1;
+}
+
+.testimonial-text {
+  color: #5e6282;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  max-width: 380px;
+  text-align: center;
+  /* margin-bottom: 24px; */
+}
+
+.author-name {
+  color: #14183e;
+  font-weight: 600;
+  font-size: 16px;
+  /* margin-bottom: 4px; */
+  opacity: 0;
+  /* transform: translateX(-100%) !important; Move to the left */
+  transition: transform 0.8s ease, opacity 0.5s ease;
+  margin-bottom: 0px;
+}
+
+.author-location {
+  color: #6b7280;
+  font-size: 14px;
+  opacity: 0;
+  /* transform: translateX(-100%) !important; Move to the left */
+  transition: transform 0.8s ease, opacity 0.5s ease;
+  margin-bottom: 0px;
+}
+
+/* ############################################################ */
+@keyframes slideIn {
+from {
+  transform: translateX(-200%);
+  opacity: 0;
+}
+to {
+  transform: translateX(50px);
+  opacity: 1;
+}
+}
+
+@keyframes slideOut {
+from {
+  transform: translateX(0);
+  opacity: 1;
+}
+to {
+  transform: translateX(-200%);
+  opacity: 0;
+}
+}
+
+.testimonial-card .author-name,
+.testimonial-card .author-location {
+transform: translateX(-100%);
+opacity: 0;
+transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+.testimonial-card.active .author-name,
+.testimonial-card.active .author-location {
+animation: slideIn 1.2s forwards;
+}
+
+.testimonial-card:not(.active) .author-name,
+.testimonial-card:not(.active) .author-location {
+animation: slideOut 1.2s forwards;
+}
+
+  /* ############################################################ */
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dots-wrapper {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+.dots-wrapper img:nth-child(1) {
+  position: absolute;
+  right: -35px;
+  bottom: 30px;
+  width: 60px;
+}
+.dots-wrapper img:nth-child(2) {
+  position: absolute;
+  right: -83px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+}
+.dots-wrapper span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background: #14183e;
+}
+/* Testimonial section end */
+/* Footer section start */
+footer {
+  background-image: url(images/footer/footer-back.png);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  opacity: 0.9;
+}
+.footer h5 {
+  font-family: "Bebas Neue";
+  font-size: 24px;
+  font-weight: 400;
+}
+.footer .footer-logo img {
+  max-width: 120px;
+  top: -30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.corporate-office p {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 400;
+}
+.quick-stock ul li {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 400;
+}
+.map-container {
+  overflow: hidden;
+}
+.map-container iframe {
+  border-radius: 10px;
+  border: 0;
+}
+.stock-search {
+  display: flex;
+  align-items: center;
+}
+.stock-search input::placeholder{
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+
+}
+.form-control-custom {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.form-control-custom::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form-control-custom:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: white;
+}
+
+@media (max-width: 991px) {
+  .social-icons {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .stock-search {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .stock-search button {
+    margin-top: 0.5rem;
+  }
+}
+.foot-but {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+}
+/* Footer section end */
