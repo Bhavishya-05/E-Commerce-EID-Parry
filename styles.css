@@ -462,9 +462,9 @@ display: block;
 }
 .product-card .card::before {
   content: "";
-  /* background: url('images/explore_range/back-gif.gif') center center / cover no-repeat,
+  /* background: url('images/explore_range/back-gif.png') center center / cover no-repeat,
     rgba(184, 180, 180, 0.5); */
-  background-image: url("images/explore_range/back-gif.gif");
+  background-image: url("images/explore_range/back-gif.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1011,7 +1011,7 @@ display: block;
 }
 .main-wrapper__panel .recipes::before {
   content: "";
-  background-image: url("images/recipes/recipeGif.gif");
+  background-image: url("images/recipes/recipeGif.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
